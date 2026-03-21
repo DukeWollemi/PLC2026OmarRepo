@@ -112,7 +112,7 @@ public class PlaylistSubprg {
     public static float getPlaylistLengthTwoItems(List<Item> playlist) throws PlaylistProgress.EndOfPlaylist {
         PlaylistProgress progress = new PlaylistProgress(playlist);
         // TASK 3a: Is the expression below referentially transparent?
-        return twice(progress.getNextItem().length_secs);
+        return progress.getNextItem().length_secs + progress.getNextItem().length_secs;
     }
 
     private static float twice(float x) {
@@ -180,12 +180,8 @@ public class PlaylistSubprg {
                 }
 
 
-                result = tempResultFloatHolder;
-                resultNoAds = tempResultNoAdsFloatHolder;
-
-
-
-
+                result.x = tempResultFloatHolder;
+                resultNoAds.x = tempResultNoAdsFloatHolder;
     }
 
     public static void main(String[] args)
